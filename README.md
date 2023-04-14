@@ -1,10 +1,10 @@
 # ChatGPT Voice Assistant - Hey Nova
-A GPT-Powered Voice Assistant that you can run in your local machine and talk as if it were Google Assistant or Alexa.
+Introducing a voice assistant powered by GPT, which runs locally on your machine and allows you to converse with it as if you were interacting with Google Assistant or Alexa. The best part? It's completely free of charge, as it leverages your personal OpenAI account.
 
 [![Python version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is an open-source repository for a voice-controlled chatbot called Nova. It utilizes Google's Speech Recognition API for speech-to-text and GPT-3 for generating responses. The chatbot can be controlled using voice commands and generates audio responses. 
+This is an open-source repository for a voice-controlled chatbot called Nova. It utilizes Google's Speech Recognition API for speech-to-text and [GPT-3 unofficial API](https://github.com/acheong08/ChatGPT) for generating responses. The chatbot can be controlled using voice commands and generates audio responses. 
 
 Once the assistant is triggered with the keyword **"Hello Nova"**, it starts listening for user input. The assistant will continue to listen and respond in a conversational manner until the user says **"Bye Nova"**. The assistant is capable of answering questions and generating coherent dialogues as if you were texting with ChatGPT.
 
