@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="150" width="150" src="res/chatgpt.jpg" alt="ChatGPT">    
+  <img height="150" width="280" src="res/chatgpt.png" alt="ChatGPT">    
 </p>
 <h1 align="center">ChatGPT Voice Assistant - Hey Nova</h1>
 <h5 align="center">Converse with an AI-powered voice assistant that runs locally on your machine, powered by GPT, just like Google Assistant or Alexa. Completely free of charge, using your personal OpenAI account. </h5>
