@@ -1,8 +1,25 @@
-# ChatGPT Voice Assistant - Hey Nova
-Introducing a voice assistant powered by GPT, which runs locally on your machine and allows you to converse with it as if you were interacting with Google Assistant or Alexa. The best part? It's completely free of charge, as it leverages your personal OpenAI account.
+<p align="center">
+  <img height="150" width="150" src="res/chatgpt.jpg" alt="ChatGPT">    
+</p>
+<h1 align="center">ChatGPT Voice Assistant - Hey Nova</h1>
+<h5 align="center">Converse with an AI-powered voice assistant that runs locally on your machine, powered by GPT, just like Google Assistant or Alexa. Completely free of charge, using your personal OpenAI account. </h5>
 
-[![Python version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="#description">Description</a> •
+  <a href="#how-to-install">How To Install</a> •
+  <a href="#how-to-use">How to Use</a> •
+  <a href="#license">License</a>
+</p>
+<p align="center">
+  <a href="https://github.com/angeligareta/hey-nova-gpt-voice-assistant/blob/master/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/angeligareta/hey-nova-gpt-voice-assistant.svg?style=for-the-badge">
+  </a>
+  <a href="https://github.com/ellerbrock/open-source-badges/">
+    <img alt="Website" src="https://badges.frapsoft.com/os/v1/open-source-175x29.png?v=103">
+  </a>
+</p>
+
+## Description
 
 This is an open-source repository for a voice-controlled chatbot called Nova. It utilizes Google's Speech Recognition API for speech-to-text and [GPT-3 unofficial API](https://github.com/acheong08/ChatGPT) for generating responses. The chatbot can be controlled using voice commands and generates audio responses. 
 
