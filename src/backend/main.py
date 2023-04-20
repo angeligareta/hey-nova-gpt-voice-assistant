@@ -35,7 +35,8 @@ def transcribe(audio_data: sr.AudioData, lang: str = 'en') -> str:
     # create a language_dict to map lang keys to corresponding language codes
     language_dict = {
         'en': 'en-US',
-        'es': 'es-ES'
+        'es': 'es-ES',
+        'sv': 'se-SE'
     }
 
     r = sr.Recognizer()
@@ -61,7 +62,8 @@ def synthesize(text: str, lang: str = 'en', speed_multiplier: Optional[float] = 
     # create a tld_dict to map lang keys to corresponding tld values
     tld_dict = {
         'en': 'com.au',
-        'es': 'es'
+        'es': 'es',
+        'sv': 'se'
     }
 
     if len(text.strip()) > 0:
@@ -85,12 +87,12 @@ def synthesize(text: str, lang: str = 'en', speed_multiplier: Optional[float] = 
             play_obj.wait_done()
 
 
-def assistant_loop(lang: str, speed_multiplier: float, assistant_name: str) -> None:
+def assistant_loop(lang: str, speed_multiplier: float, assistant_name: str, credentials: dict = None) -> None:
     """
     The main loop of the Nova chatbot. Initializes the chatbot and listens for user input to generate responses.
     """
     # Read credentials
-    credentials = json.load(open("credentials.json"))
+    credentials = json.load(open("credentials.json")) if credentials is None else credentials
 
     # Initialize chatgpt with system message
     chatbot = Chatbot(
@@ -116,7 +118,7 @@ def assistant_loop(lang: str, speed_multiplier: float, assistant_name: str) -> N
 
         prompt = transcribe(audio_data, lang=lang).lower()
 
-        trigger_end_words = [f'bye', f'adios']
+        trigger_end_words = [f'bye', f'adiós']
         if any([f'{w} {assistant_name}' in prompt for w in trigger_end_words]):
             break
 
@@ -138,14 +140,16 @@ def assistant_loop(lang: str, speed_multiplier: float, assistant_name: str) -> N
 
     chatbot.delete_conversation(convo_id=chatbot.conversation_id)
 
-
-if __name__ == "__main__":
+def main():
     # Add command-line argument parsing
     parser = argparse.ArgumentParser(description="Voice-controlled chatbot")
-    parser.add_argument("-l", "--language", default="en", choices=["en", "es"], help="Language code (en, es)")
+    parser.add_argument("-l", "--language", default="en", choices=["en", "es", "sv"], help="Language code (en, es)")
     parser.add_argument("-s", "--speed_multiplier", type=float, default=1.25, help="Speed multiplier for the assistant's voice output")
     parser.add_argument("-a", "--assistant_name", type=str, default='Nova', help="Assistant name")
 
     args = parser.parse_args()
 
     assistant_loop(lang=args.language, speed_multiplier=args.speed_multiplier, assistant_name=args.assistant_name.lower())
+
+if __name__ == "__main__":
+    main()
